@@ -1,0 +1,968 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="description" content="Astro description"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/logo.ico"><meta name="generator" content="Astro v4.4.0"><title>DecoWood</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"><link rel="stylesheet" href="/_astro/index.HqjTXisz.css" /></head> <body>  <main class=" h-full w-full bg-white/10 overflow-hidden"> <header
+  id="nav-area"
+  class="fle flex-row pb-2 justify-center items-center w-full
+  fixed top-0 
+  bg-black/10 backdrop-blur-sm z-20 transition-all duration-200">
+  
+
+  <!--NAVBAR-->
+  <nav
+    class="flex justify-between items-center gap-x-12 w-[90%] mx-auto md:items-end"
+  >
+  <!--LOGO-->
+    <div class="flex flex-row relative gap-x-1 z-50 px-5 items-baseline justify-center pt-2 md:w-auto">
+      <img src="./logo-home.svg" class="h-6 md:h-8" alt="DecoWood logo" />
+      <a
+      href="#inicio"
+      id="decowood"
+      class="font-semibold text-white font-dm text-xl tracking-wider hover:scale-[1.02] transition-all duration-300 
+      md:text-2xl">
+      Deco<span style="color: #b47844; user-select: none" class="font-light"
+        >Wood</span>
+    </a>
+    </div>
+      
+
+    <!--ul-->
+    <div id="nav-content" class="nav-links absolute z-40 bg-gray-600 sm:bg-gray-600 md:bg-transparent top-0 left-0 h-0 w-full flex items-center md:pb-0 px-6 transition-all duration-300 overflow-hidden
+    md:static md:h-fit md:w-auto md:px-0">
+
+      <ul class="flex flex-col gap-y-10 pl-2 items-baseline
+      md:items-end w-full md:w-fit md:gap-[4vw] md:pl-0 md:flex-row">
+
+        <li class="block w-full"> 
+          <a
+            onclick="onToggleMenu(this)"
+            id="nav-link" 
+            class="text-white hover:text-white/70 tracking-wide text-base font-poppins transition duration-300 active:bg-black/30 md:hover:bg-transparent md:active:translate-y-[2px] hover:bg-black/10 w-full block pl-2 py-2 md:pl-0 md:py-0"
+            href="#nosotros"
+            >Nosotros</a
+          >
+        </li>
+
+        <li class="block w-full">
+          <a
+            onclick="onToggleMenu(this)"
+            id="nav-link"
+            class="text-white hover:text-white/70 tracking-wide text-base font-poppins transition duration-300 active:bg-black/30 md:hover:bg-transparent md:active:translate-y-[2px] hover:bg-black/10 w-full block pl-2 py-2 md:pl-0 md:py-0"
+            href="#productos"
+            >Productos</a
+          >
+        </li>
+
+        <li class="block w-full">
+          <a
+            onclick="onToggleMenu(this)"
+            id="nav-link"
+            class="text-white hover:text-white/70 tracking-wide text-base font-poppins transition duration-300 active:bg-black/30 md:hover:bg-transparent md:active:translate-y-[2px] hover:bg-black/10 w-full block pl-2 py-2 md:pl-0 md:py-0"
+            href="#servicios"
+            >Servicios</a
+          >
+        </li>
+
+        <li class="block w-full">
+          <a id="nav-link"
+            onclick="onToggleMenu(this)"
+            class="text-white hover:text-white/70 tracking-wide text-base font-poppins transition duration-300 active:bg-black/30 md:hover:bg-transparent md:active:translate-y-[2px] hover:bg-black/10 w-full block pl-2 py-2 md:pl-0 md:py-0"
+            href="#contacto"
+            >Contacto</a
+          >
+        </li>
+
+      </ul>
+
+    </div>
+
+    <!--Menu responsive-->
+    <div class="absolute right-5 top-2 flex items-center z-50">
+      <ion-icon onclick="onToggleMenu(this)" class="text-3xl cursor-pointer md:hidden text-gray-300 active:scale-95" name="menu"></ion-icon>
+    </div>
+
+  </nav>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</header>
+
+
+<!--SCRIPT MENU RESPONSIVE-->
+<script>
+  const navLinks = document.querySelector('.nav-links')
+
+  function onToggleMenu(e){
+    e.name = e.name === 'menu' ? 'menu' : 'menu'
+    navLinks.classList.toggle('h-[55vh]')
+  }
+
+</script>
+
+
+
+
+<!--SCRIPT SCROLL NAVBAR-->
+<script type="text/javascript">
+  let lastScrollTop = 0;
+  header = document.getElementById("nav-area");
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop) {
+      header.style.top = "-80px";
+    } else {
+      header.style.top = "0px";
+    }
+    lastScrollTop = scrollTop;
+  });
+</script>
+
+<!--Estilos Animacion-->
+<style>
+  a::selection {
+    background-color: #b47844bc;
+    color: #000;
+  }
+</style>
+
+<!-- ESTILO NAVLINK -->
+<style>
+  *:before,
+  *:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  #nav-link {
+    position: relative;
+    letter-spacing: 0.5px;
+  }
+
+  #nav-link:after {
+    content: "";
+    position: absolute;
+    background-color: #a8a8a8;
+    height: 2px;
+    width: 0%;
+    left: 0;
+    bottom: 0px;
+    transition: all 0.3s ease;
+  }
+
+  #nav-link:hover::after {
+    width: 100%;
+  }
+
+  a::selection {
+    background-color: #b47844bc;
+    color: #000;
+  }
+</style>
+
+<!-- ANIMACION TEXTO LOGO -->
+<script src="https://unpkg.com/split-type"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script>
+  const myText = new SplitType("#decowood");
+
+  gsap.to(".char", {
+    y: 0,
+    stagger: 0.05,
+    delay: 0.2,
+    duration: 0.8,
+  });
+</script>
+
+<style>
+  #decowood {
+    overflow: hidden;
+  }
+  .char {
+    transform: translateY(115px);
+    transition: transform 0.5s;
+  }
+</style>
+ 
+<!-- Slider main container -->
+<div id="inicio" class="swiper h-[60vh] w-full 
+md:h-[100vh]">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <!-- IMAGEN 1-->
+    <div class="swiper-slide flex justify-center">
+      <img
+        loading="lazy"
+        class="h-full w-full object-cover brightness-50"
+        src="./home-img-3.webp"
+        alt="imagen de fondo"
+      />
+      <!-- CONTENIDO DENTRO DE LA IMAGEN -->
+      <!-- Texto y Logo -->
+      <section>
+        <div
+          class="mostrar-hero absolute flex flex-col md:flex-row items-center md:items-end gap-x-2 md:left-[10%] sm:left-[35%] left-[30%] top-[38%]"
+        >
+          <img class="size-16 md:size-32 brightness-75" src="./logo-home.svg" alt="imagen de logo"/>
+
+          <div class="flex flex-col md:gap-y-2 gap-y-0">
+            <h2 
+              class="text-2xl md:text-7xl md:text-left text-center tracking-wide font-dm font-semibold text-white">Deco<span
+               class="font-light text-[#b47844]">Wood</span>
+            </h2>
+            <p class="text-base text-center md:text-left md:text-3xl font-dm text-white font-extralight">
+              Equipamiento integral
+            </p>
+          </div>
+        </div>
+
+        <div class="mostrar-hero absolute md:left-[10%] left-[14%] top-[70%] md:top-[62%] md:w-[50%] w-[70%] ">
+          <p
+            class="text-base md:text-2xl text-center md:text-left font-dm text-slate-300 font-extralight text-pretty leading-6 md:leading-9"
+          >
+            Con <span class="font-semibold text-[#b47844]">+20 años</span> en el rubro de la
+            carpintería y el diseño interior.
+          </p>
+          <p
+            class="hidden md:block text-base md:text-2xl text-center md:text-left font-dm text-slate-300 font-extralight text-pretty leading-6 md:leading-9 mt-3"
+          >
+            Integrado por expertos profesionales, quienes trabajan en
+            colaboración con cada cliente.
+          </p>
+          
+        </div>
+      </section>
+
+      <!-- Social -->
+      <div
+        class="mostrar-social absolute top-[27%] right-[8%] hidden md:flex flex-col items-center gap-y-12"
+      >
+        <span class="mb-6 block h-[1.5px] w-28 bg-slate-300 rotate-90"></span>
+
+        <!--Instagram-->
+        <a
+          class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all"
+          href="#"
+          rel="noopener noreferrer"
+        >
+          <i
+            class="p-2 text-xl md:text-2xl transition text-slate-300 fa-brands fa-instagram"
+          ></i>
+        </a>
+        <!--Mensaje-->
+        <a
+          class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all"
+          href="#"
+        >
+          <i
+            class=" text-lg md:text-xl p-2 transition text-slate-300 fa-regular fa-paper-plane"
+          ></i>
+        </a>
+        <!--Llamar-->
+        <a
+          href="#"
+          class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all"
+        >
+          <i
+            class="hover:rotate-12 p-2 text-lg md:text-xl transition text-slate-300 fa-solid fa-phone-volume"
+          ></i>
+        </a>
+
+        <span class="mt-6 block h-[1.5px] w-28 bg-slate-300 rotate-90"></span>
+      </div>
+    </div>
+
+    <!-- IMAGEN 2-->
+    <div class="swiper-slide flex justify-center bg-black/50">
+      <img
+        loading="lazy"
+        class="h-full w-full object-cover brightness-50 "
+        src="./home-img-2.webp"
+        alt="imagen de fondo 2"
+      />
+
+      <div class="mostrar-social flex flex-col items-center gap-y-8 justify-center absolute top-[38%] w-[75%]">
+        <h3
+          class="text-xl md:text-5xl text-white font-dm font-bold text-pretty text-center leading-normal">
+          Brindando nuestros <span style="-webkit-text-stroke: 1px #efefef" class="font-poppins font-medium text-transparent">Servicios</span> y <span style="-webkit-text-stroke: 1px #efefef" class="font-poppins font-medium text-transparent">Productos</span> tanto en proyectos empresariales como en hogares.
+        </h3>
+        <a
+          class="relative group overflow-hidden px-3 md:px-6 h-8 md:h-12 border  border-gray-200 hover:border-gray-400 hover:bg-black/10"
+          href="#productos">
+          <div aria-hidden="true" class="transition duration-300 group-hover:-translate-y-7 md:group-hover:-translate-y-12">
+            <div class="h-7 md:h-12 flex items-center justify-center">
+              <span class="text-white text-sm md:text-lg">Productos</span>
+            </div>
+            <div class="h-7 md:h-12 flex items-center justify-center">
+              <span class="text-white text-sm md:text-lg">Proyectos</span>
+            </div>
+        </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- IMAGEN 3-->
+    <div class="swiper-slide flex justify-center">
+      <img
+        loading="lazy"
+        class="h-full w-full object-cover brightness-50"
+        src="./home-img.webp"
+        alt="imagen de fondo 3"
+      />
+
+      <div class="mostrar-hero flex justify-center absolute top-[38%] w-[70%]">
+        <h3
+          class="text-[#efefef] text-xl md:text-5xl font-dm font-bold text-pretty leading-snug text-center">
+          Creamos
+          <span
+            class="font-poppins font-medium text-transparent"
+            style="-webkit-text-stroke: 1px #efefef">ambientes únicos</span> para tus ideas <br />
+          Con diseños
+          <span
+            class="font-poppins font-medium text-transparent"
+            style="-webkit-text-stroke: 1px #efefef">que hacen la diferencia</span>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <!-- pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- navigation buttons -->
+  <div class="swiper-button-prev hover:text-[#d6d6d6] text-white mx-3 md:mx-6"></div>
+  <div class="swiper-button-next hover:text-[#d6d6d6] text-white mx-3 md:mx-6"></div>
+
+</div>
+
+<!--ESTILOS ANIMACION-->
+<style>
+  .mostrar-hero {
+    animation: fade-left 0.7s ease-in-out;
+    transition: all 0.5s;
+  }
+
+  @keyframes fade-left {
+    from {
+      opacity: 0;
+      transform: translateX(-20rem) scale(0.5);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0rem) scale(1);
+    }
+  }
+
+  .mostrar-social {
+    animation: fade-in 0.8s ease-in-out;
+    transition: all 0.5s;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  const swiper = new Swiper(".swiper", {
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+    grabCursor: true,
+    effect: "fade",
+    effect: "creative",
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ["-20%", 0, -1],
+      },
+      next: {
+        translate: ["100%", 0, 0],
+      },
+    },/*
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },*/
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+</script>
+
+<style>
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    --swiper-navigation-size: 30px;
+    padding: 1.5%;
+    border-radius: 1000px;
+    transition: all 0.3s ease-in-out;
+  
+
+    opacity: 0;
+  }
+
+
+
+  .swiper:hover .swiper-button-prev,
+  .swiper:hover .swiper-button-next {
+    opacity: 1;
+  }
+
+  /*bullet*/
+  .swiper-pagination-bullet {
+    --swiper-theme-color: #fff;
+  }
+</style>
+
+ </main> <section id="nosotros"
+class="flex flex-col justify-center items-center bg-[#13151a] md:pt-10 md:pb-12 md:px-10 px-9 pb-16">
+
+    <div class="px-3 py-12 md:p-5">
+
+        <h2 id="titulo-nosotros" class="md:pb-5 text-3xl md:text-4xl text-white font-dm font-semibold">¿Por que elegirnos?</h2>
+
+    </div>
+
+    <div class="flex justify-center md:flex-row md:my-5 flex-col items-start md:gap-x-10 gap-y-10">
+
+        <article id="articulo" class="flex flex-col w-auto md:w-96 gap-y-5 md:gap-y-3">
+
+            <h3 class="text-xl text-center text-white font-dm font-medium">
+                <i class="pr-1 fa-solid fa-ruler-combined"></i>
+                Diseño y Fabricación a Medida
+            </h3>
+
+            <p class="text-base text-center text-balance text-[#c0c0c0] font-poppins font-extralight leading-relaxed md:leading-normal">
+                Desde elegantes armarios hasta funcionales escritorios,nuestros profesionales trabajan en colaboración con usted para crear muebles personalizados que se adapten perfectamente a su espacio.
+            </p>
+        </article>
+
+        <article id="articulo" class="flex flex-col w-auto md:w-96 gap-y-3">
+            
+            <h3 class="text-xl text-center text-white font-dm font-medium">
+                <i class="pr-1 fa-solid fa-truck-ramp-box"></i>
+                Envío gratis
+            </h3>
+
+            <p class="text-base text-center text-balance text-[#c0c0c0] font-poppins font-extralight leading-relaxed md:leading-normal">
+                Nos esforzamos por hacer que la experiencia de compra sea lo más conveniente y accesible posible para nuestros clientes.
+            </p>
+        </article>
+
+        <article id="articulo" class="flex flex-col w-auto md:w-96 gap-y-3">
+
+            <h3 class="text-xl text-center text-white font-dm font-medium">
+                <i class="pr-1 fa-solid fa-hammer"></i>
+                Instalación gratis
+            </h3>
+
+            <p class="text-base text-center text-balance text-[#c0c0c0] font-poppins font-extralight leading-relaxed md:leading-normal">
+                En cada uno de los productos nos encargamos de la instalación, asegurando de que sea una experiencia sin problemas y satisfactoria para nuestros clientes.   
+            </p>
+        </article>
+
+    </div>
+</section>
+
+<style>
+    h2::selection{
+    background-color: #b47844bc;
+    color: #000;
+  }
+  h3::selection{
+    background-color: #b47844bc;
+    color: #000;
+  }
+  p::selection{
+    background-color: #b47844bc;
+    color: #000;
+  }
+
+
+
+    #articulo{
+
+        view-timeline-name: --content;
+        view-timeline-axis: block;
+
+        animation-timeline: --content;
+        animation-name: show-title;
+        animation-range: entry 25% cover 55%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes show-title {
+        from{
+            opacity: 0;
+            transform: translateY(70%);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+
+    #titulo-nosotros{
+        view-timeline-name: --content;
+        view-timeline-axis: block;
+
+        animation-timeline: --content;
+        animation-name: fade-in;
+        animation-range: entry 20% cover 90%;
+        animation-fill-mode: both;
+    }
+
+    @keyframes fade-in {
+        from{
+            opacity: 0;
+            transform: translateY(250%);
+        }
+
+        to{
+            opacity: 1;
+            transform: translateY(0%);
+        }
+    }
+</style> <main id="productos" class="bg-[#000000] py-8 ">
+
+  <div class="flex justify-center items-center flex-col">
+        <h3
+        id="titulo-productos"
+        style="-webkit-text-stroke: 1px #ffffff"
+        class="text-3xl py-2 md:text-5xl tracking-wider text-transparent font-dm font-semibold">
+        Productos</h3>
+        <h3
+        id="titulo-proyectos"
+        class=" text-white pt-2 pb-10 tracking-wider text-3xl md:text-5xl font-dm font-semibold">
+        Proyectos
+        </h3>
+  </div>
+
+  <swiper-container
+    style="
+      --swiper-navigation-color: #000000;
+      --swiper-pagination-color: #fff;
+      user-select: none;
+    "
+    class="mySwiper h-[20rem] w-[85%] md:h-[25rem] md:w-[70%]"
+    thumbs-swiper=".mySwiper2"
+    loop="true"
+    space-between="10"
+    navigation="true">
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto3.webp"
+        alt="producto3"/>
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6">
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Bajo mesadas
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Proporciona espacio útil en la cocina mientras a su vez ofrece un
+          diseño minimalista.
+        </p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        class="transition-all duration-200 brightness-50"
+        loading="lazy"
+        src="./producto.webp"
+        alt="producto1"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Aereos para la cocina
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Ofreciondo un espacio cómodo y útil para cualquier función dentro de
+          la cocina.
+        </p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto2.webp"
+        alt="producto2"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Escritorios
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Combina estilo contemporáneo y funcionalidad para crear el entorno de
+          trabajo perfecto en tu hogar u oficina.
+        </p>
+      </div>
+    </swiper-slide>
+    
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto4.webp"
+        alt="producto4"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Muebles a medida
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Personalizamos el diseño y fabricación de tu mueble a medida para
+          adaptarlo a lugares específicos.
+        </p>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto8.webp"
+        alt="producto6"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Muebles de baño
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Perfecto para mantener organizados los artículos de tocador y mantener
+          el orden dentro del baño.
+        </p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto7.webp"
+        alt="producto7"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Sobre lavabo
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Cómoda para tus rutinas diarias de cuidado personal.
+        </p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto11.webp"
+        alt="producto11"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[60%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">Sillas</h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Todo tipo de sillas con diseños ergonómicos que permiten trabajar de
+          forma cómoda y productiva durante todo el día.
+        </p>
+      </div>
+    </swiper-slide>
+    <swiper-slide>
+      <img
+        loading="lazy"
+        class="transition-all duration-200 brightness-50"
+        src="./producto12.webp"
+        alt="producto12"
+      />
+
+      <div
+        id="texto"
+        class="absolute bottom-0 flex flex-col justify-center items-center gap-y-3 w-[100%] h-[40%] px-10 py-3 bg-[#00000083]
+        md:gap-y-5 md:w-[70%] md:rounded-lg md:px-10 md:py-5 md:bottom-6"
+      >
+        <h4 class="text-xl md:text-4xl font-semibold font-poppins text-white">
+          Muebles para living
+        </h4>
+
+        <p class="font-dm text-white text-pretty text-sm md:text-lg">
+          Agrega estilo y armonía a tu comedor, ideal para guardar elementos
+          decorativos mientras mantiene tu hogar organizado y elegante.
+        </p>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <swiper-container
+    class="mySwiper2 h-[8rem] w-[85%] md:h-[12rem] md:w-[70%]"
+    loop="true"
+    space-between="10"
+    slides-per-view="4"
+    free-mode="true"
+    watch-slides-progress="true"
+  >
+    <swiper-slide>
+      <img loading="lazy" src="./producto.webp" alt="producto1"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto2.webp" alt="producto2"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto3.webp" alt="producto3"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto4.webp" alt="producto4"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto8.webp" alt="producto8"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto7.webp" alt="producto7"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto11.webp" alt="producto11"/>
+    </swiper-slide>
+    <swiper-slide>
+      <img loading="lazy" src="./producto12.webp" alt="producto12"/>
+    </swiper-slide>
+  </swiper-container>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+<style>
+  swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+  }
+
+  swiper-slide img {
+    display: sw swiper-slidek;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  swiper-slide {
+    background-size: cover;
+    background-position: center;
+  }
+
+  .mySwiper {
+    --swiper-navigation-size: 30px;
+    view-timeline-name: --titulo;
+    view-timeline-axis: block;
+
+    animation-timeline: --titulo;
+    animation-name: show;
+    animation-range: entry 20% cover 40%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes show {
+    from {
+      scale: 1.1;
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+
+    to {
+      scale: 1;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  .mySwiper2 {
+    box-sizing: border-box;
+    padding: 2rem 0px;
+    cursor: pointer;
+  }
+
+
+  .mySwiper2 swiper-slide {
+
+    opacity: 0.4;
+    filter: blur(1px) grayscale(1);
+    border: 2px solid #000;
+  }
+
+  .mySwiper2 .swiper-slide-thumb-active {
+    opacity: 0.9;
+    filter: blur(0px) grayscale(0);
+    border: 2px solid #fff;
+  }
+
+  swiper-slide img {
+    display: sw swiper-slidek;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+
+<!--Estilos scroll-->
+
+<style>
+
+
+
+  #titulo-productos {
+    view-timeline-name: --titulo;
+    view-timeline-axis: block;
+
+    animation-timeline: --titulo;
+    animation-name: fade;
+    animation-range: entry 15% cover 70%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-30%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  #titulo-proyectos {
+    view-timeline-name: --titulo2;
+    view-timeline-axis: block;
+
+    animation-timeline: --titulo2;
+    animation-name: fade-in;
+    animation-range: entry 15% cover 70%;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+
+  #titulo-productos::selection {
+    -webkit-text-stroke: 1px #000;
+    background-color: #000;
+    color: #b47844bc;
+  }
+  #titulo-proyectos::selection {
+    background-color: #b47844bc;
+    color: #000;
+  }
+</style>
+ <section class="flex justify-center items-center w-[full] bg-[#b47844bc] py-16 md:py-24" id="servicios" data-astro-cid-qwsjowbz> <div class="flex flex-col justify-center items-center pb-5 md:pb-10 px-10 md:px-20" data-astro-cid-qwsjowbz> <article id="content-titulo" class="pb-14" data-astro-cid-qwsjowbz> <h3 id="titulo-servicios" class="block text-3xl md:text-5xl text-black font-dm font-bold text-left" data-astro-cid-qwsjowbz>
+Nuestros Servicios
+</h3> </article> <ul class="flex flex-col md:flex-row justify-center gap-y-10 md:gap-x-10" data-astro-cid-qwsjowbz> <li class="servicio1 w-[90%] flex flex-col gap-y-3" data-astro-cid-qwsjowbz> <h4 class="text-xl md:text-2xl font-playfair font-semibold" data-astro-cid-qwsjowbz>
+Cotización de Producto sin Costo
+</h4> <p class="text-pretty font-normal text-lg md:text-xl leading-normal text-black/85" data-astro-cid-qwsjowbz>
+En Deco Wood, entendemos la importancia de tomar decisiones informadas
+                al momento de elegir los muebles y servicios adecuados para tu hogar.
+                Es por eso que ofrecemos cotizaciones de productos sin ningún costo.
+</p> </li> <li class="servicio2 w-[90%] flex flex-col gap-y-3" data-astro-cid-qwsjowbz> <h4 class="text-xl md:text-2xl font-playfair font-semibold" data-astro-cid-qwsjowbz>
+Fabricación y Diseño de Muebles
+</h4> <p class="text-pretty font-normal text-lg md:text-xl leading-normal text-black/85" data-astro-cid-qwsjowbz>
+Nos enorgullece ofrecer servicios de fabricación y diseño de
+                muebles personalizados para satisfacer las necesidades y preferencias
+                únicas de cada cliente.
+</p> </li> <li class="servicio3 w-[90%] flex flex-col gap-y-3" data-astro-cid-qwsjowbz> <h4 class="text-xl md:text-2xl font-playfair font-semibold" data-astro-cid-qwsjowbz>
+Soporte y Asesoramiento
+</h4> <p class="text-pretty font-normal text-lg md:text-xl leading-normal text-black/85" data-astro-cid-qwsjowbz>
+Ofrecemos soporte y asesoramiento, ya sea que necesites ayuda
+                con la selección de muebles, asesoramiento sobre diseño de interiores
+                o asistencia con cualquier otra consulta relacionada con nuestros
+                servicios.
+</p> </li> </ul> </div> </section>  <section id="contacto" class="flex flex-col justify-center items-center bg-black pb-10 p-2 md:p-5 md:pb-20" data-astro-cid-xjughlio> <div id="container-titulo" class="flex flex-col justify-center items-center gap-y-3 md:gap-y-5 my-8 md:my-16" data-astro-cid-xjughlio> <h2 class="text-3xl md:text-4xl text-center text-white font-dm font-semibold" data-astro-cid-xjughlio>Contacto</h2> <p class="text-base md:text-xl text-center text-balance text-[#c0c0c0] font-poppins font-extralight leading-normal" data-astro-cid-xjughlio>Comunícate con nosotros para comenzar a transformar tus ideas!</p> </div> <div id="container-contacto" class="flex flex-col md:flex-row justify-evenly items-start w-[85%] md:w-[70%]
+    p-5 md:p-10 bg-[#131313] md:gap-y-0 gap-y-6 rounded-md overflow-hidden" data-astro-cid-xjughlio> <!-- formulario --> <article class="w-full md:w-[70%]" data-astro-cid-xjughlio> <form class="flex flex-col justify-center items-center md:items-start gap-y-3 mx-0 md:mx-5" action="" method="post"> <div class="relative w-full"> <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-[#1c1c1c] border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required> <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Nombre*</label> </div> <div class="relative w-full"> <input type="email" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-[#1c1c1c] border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required> <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Correo*</label> </div> <div class="relative w-full"> <input type="text" id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-[#1c1c1c] border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required> <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Asunto</label> </div> <div class="relative w-full"> <textarea id="floating_filled" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-[#1c1c1c] border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " cols="30" rows="4"></textarea> <label for="floating_filled" class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto">Mensaje</label> </div> <input class="relative group px-6 border border-white/70 text-white/70 text-lg 
+    hover:text-white hover:rounded-lg hover:border-white hover:bg-black/10 hover:cursor-pointer active:scale-95 active:bg-white/10
+      transition-all duration-200 mt-2" type="submit" value="Enviar"> </form> </article> <!-- mapa/contacto --> <article id="mapa" class="flex flex-col justify-center items-start gap-y-3 w-full md:w-[70%]" data-astro-cid-xjughlio> <iframe class="rounded-md w-full h-72" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1647.028848899268!2d-56.15618225496949!3d-34.920613116978416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959f811d46d7a485%3A0x20fba9142d50c276!2sParque%20Juan%20Zorrilla%20de%20San%20Martin!5e0!3m2!1ses!2suy!4v1709081455734!5m2!1ses!2suy" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" data-astro-cid-xjughlio>
+      </iframe> </article> </div> </section>  <footer class="dark:bg-[#13151a]"> <div class="w-auto max-w-screen-xl mx-auto p-4 md:py-8"> <div class="sm:flex sm:items-center sm:justify-evenly"> <div> <a href="#inicio" class="flex grayscale items-baseline sm:mb-0 space-x-1 rtl:space-x-reverse transition-all
+            hover:grayscale-0"> <img src="./logo-home.svg" class="h-7" alt="DecoWood logo"> <h3 class="self-center text-xl md:text-2xl font-semibold whitespace-nowrap dark:text-[#999999]">
+DecoWood
+</h3> </a> <p class="text-sm md:text-base mt-1 text-[#999999]">Equipamiento integral</p> </div> <ul class="flex flex-wrap gap-x-3 items-center my-4 text-sm font-medium text-gray-500 sm:mb-0 dark:text-gray-400"> <li> <a class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all" href="#" rel="noopener noreferrer"> <i class="p-2 text-xl transition text-slate-300 fa-brands fa-instagram"></i> </a> </li> <li> <a class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all" href="#"> <i class="text-lg p-2 transition text-slate-300 fa-regular fa-paper-plane"></i> </a> </li> <li> <a href="#" class="hover:bg-black/75 rounded-lg flex items-center justify-center w-8 h-8 transition-all"> <i class="hover:rotate-12 p-2 text-lg transition text-slate-300 fa-solid fa-phone-volume"></i> </a> </li> </ul> </div> <hr class="my-2 border-[#999999] sm:mx-auto dark:border-gray-700 lg:my-5 w-[60%]"> <p class="block text-base text-[#999999] sm:text-center dark:text-gray-400">
+©2023 DecoWood | <a href="https://alexisferradans.com/" class="hover:underline transition" target="_blank" rel="noopener noreferrer">Creditos</a>.
+</p> </div> </footer>  <script src="https://kit.fontawesome.com/70c8b821c7.js" crossorigin="anonymous"></script> </body> </html> 
